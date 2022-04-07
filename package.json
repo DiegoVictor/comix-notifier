@@ -1,0 +1,9 @@
+{
+  "name": "comix-notifier",
+  "version": "1.0.0",
+  "main": "serverless.ts",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.15.0"
+  },
+}
