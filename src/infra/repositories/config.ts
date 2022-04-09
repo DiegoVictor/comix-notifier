@@ -23,4 +23,10 @@ export const getOneByName = async <T>(name: string) =>
         },
       },
     })
-    .then((result) => Config.create<T>(getFirstItem(result)));
+    .then((result) => {
+      if (result.Count > 0) {
+        return Config.create<T>(getFirstItem(result));
+      }
+
+      return null;
+    });
