@@ -1,5 +1,6 @@
+import { IConfig } from "@application/contracts/IConfig";
 import { DynamoDB, ScanCommandOutput } from "@aws-sdk/client-dynamodb";
-import { unmarshall } from "@aws-sdk/util-dynamodb";
+import { marshall, unmarshall } from "@aws-sdk/util-dynamodb";
 
 import * as Config from "@entities/Config";
 
@@ -30,3 +31,11 @@ export const getOneByName = async <T>(name: string) =>
 
       return null;
     });
+
+export const createOne = async <T>(config: IConfig<T>) =>
+  dynamodb
+    .putItem({
+      TableName: process.env.CONFIG_TABLE,
+      Item: marshall(config),
+    })
+    .then(() => config);
