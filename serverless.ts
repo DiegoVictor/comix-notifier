@@ -8,6 +8,7 @@ const serverlessConfiguration: AWS = {
       webpackConfig: "./webpack.config.js",
       includeModules: true,
     },
+    configTable: "comix-notifier-configs",
   },
   plugins: ["serverless-webpack"],
   provider: {
@@ -19,6 +20,32 @@ const serverlessConfiguration: AWS = {
     },
     environment: {
       AWS_NODEJS_CONNECTION_REUSE_ENABLED: "1",
+    },
+  },
+  resources: {
+    Resources: {
+      ComixNotifierConfigTable: {
+        Type: "AWS::DynamoDB::Table",
+        Properties: {
+          TableName: "${self:custom.configTable}",
+          AttributeDefinitions: [
+            {
+              AttributeName: "id",
+              AttributeType: "S",
+            },
+          ],
+          KeySchema: [
+            {
+              AttributeName: "id",
+              KeyType: "HASH",
+            },
+          ],
+          ProvisionedThroughput: {
+            ReadCapacityUnits: 1,
+            WriteCapacityUnits: 1,
+          },
+        },
+      },
     },
   },
 };
