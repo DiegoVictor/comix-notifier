@@ -9,6 +9,7 @@ const serverlessConfiguration: AWS = {
       includeModules: true,
     },
     configTable: "comix-notifier-configs",
+    fallbackMangaUrl: "http://www.comix.com.br/mangas/a/ataque-dos-titas.html",
   },
   plugins: ["serverless-webpack"],
   provider: {
