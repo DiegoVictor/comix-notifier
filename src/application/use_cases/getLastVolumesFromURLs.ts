@@ -1,3 +1,4 @@
+import { getPage } from "@infra/services/comix";
 import * as Product from "@entities/Product";
 import * as Volume from "@entities/Volume";
 import { IProduct } from "@application/contracts/IProduct";
@@ -21,4 +22,9 @@ const getLastVolume = (products: IProduct[]) =>
         !previous || product.number > previous.number ? product : previous,
       null
     )
+  );
+
+export const getLastVolumesFromURLs = async (urls: string[]) =>
+  Promise.all(
+    urls.map((url) => getPage(url).then(getVolumesFromPage).then(getLastVolume))
   );
