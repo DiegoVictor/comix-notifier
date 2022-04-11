@@ -39,3 +39,13 @@ export const createOne = async <T>(config: IConfig<T>) =>
       Item: marshall(config),
     })
     .then(() => config);
+
+export const updateOneById = async <T>(id: string, value: T) => {
+  await dynamodb.updateItem({
+    TableName: process.env.CONFIG_TABLE,
+    Key: marshall({ id }),
+    UpdateExpression: "set #value = :catalog",
+    ExpressionAttributeValues: marshall({ ":catalog": value }),
+    ExpressionAttributeNames: { "#value": "value" },
+  });
+};
