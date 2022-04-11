@@ -25,6 +25,12 @@ const serverlessConfiguration: AWS = {
   },
   resources: {
     Resources: {
+      ComixNotifierTopic: {
+        Type: "AWS::SNS::Topic",
+        Properties: {
+          TopicName: "ComixNotifierTopic",
+        },
+      },
       ComixNotifierConfigTable: {
         Type: "AWS::DynamoDB::Table",
         Properties: {
