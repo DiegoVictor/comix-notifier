@@ -9,4 +9,11 @@ export default {
     CONFIG_TABLE: "${self:custom.configTable}",
     FALLBACK_MANGA_URL: "${self:custom.fallbackMangaUrl}",
   },
+  events: [
+    {
+      eventBridge: {
+        schedule: "rate(1 day)",
+      },
+    },
+  ],
 };

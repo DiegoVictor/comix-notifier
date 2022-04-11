@@ -1,5 +1,7 @@
 import type { AWS } from "@serverless/typescript";
 
+import ComixNotifierMain from "@functions/main";
+
 const serverlessConfiguration: AWS = {
   service: "comix-notifier",
   frameworkVersion: "3",
@@ -22,6 +24,9 @@ const serverlessConfiguration: AWS = {
     environment: {
       AWS_NODEJS_CONNECTION_REUSE_ENABLED: "1",
     },
+  },
+  functions: {
+    ComixNotifierMain,
   },
   resources: {
     Resources: {
