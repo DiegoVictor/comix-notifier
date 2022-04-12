@@ -4,6 +4,7 @@ import ComixNotifierMain from "@functions/main";
 
 const serverlessConfiguration: AWS = {
   service: "comix-notifier",
+  configValidationMode: "error",
   frameworkVersion: "3",
   custom: {
     webpack: {
@@ -23,6 +24,30 @@ const serverlessConfiguration: AWS = {
     },
     environment: {
       AWS_NODEJS_CONNECTION_REUSE_ENABLED: "1",
+    },
+    iam: {
+      role: {
+        statements: [
+          {
+            Effect: "Allow",
+            Action: [
+              "dynamodb:Scan",
+              "dynamodb:PutItem",
+              "dynamoDB:UpdateItem",
+            ],
+            Resource: {
+              "Fn::GetAtt": ["ComixNotifierConfigTable", "Arn"],
+            },
+          },
+          {
+            Effect: "Allow",
+            Action: ["sns:Publish"],
+            Resource: {
+              Ref: "ComixNotifierTopic",
+            },
+          },
+        ],
+      },
     },
   },
   functions: {
