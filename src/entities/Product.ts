@@ -6,7 +6,7 @@ export const PRODUCT_NAME_REGEX =
 export const create = ({ slug, product }: Record<string, any>): IProduct => {
   const [title, ...parts] = product
     .replace(PRODUCT_NAME_REGEX, "$1")
-    .split(/(volume|nº)/i)
+    .split(/(volume|nº|Vol\.)/i)
     .map((text: string) => text.trim().replace(/,$/, ""));
 
   return { title, number: Number(parts.pop()), slug };
