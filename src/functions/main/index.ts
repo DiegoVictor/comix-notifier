@@ -12,7 +12,7 @@ export default {
   events: [
     {
       eventBridge: {
-        schedule: "rate(1 day)",
+        schedule: "rate(${self:custom.executionInterval})",
       },
     },
   ],
