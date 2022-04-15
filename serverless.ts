@@ -14,6 +14,8 @@ const serverlessConfiguration: AWS = {
     configTable: "comix-notifier-configs",
     fallbackMangaUrl: "http://www.comix.com.br/mangas/a/ataque-dos-titas.html",
     executionInterval: "1 day",
+    platformApplicationArn:
+      "arn:aws:sns:${self:provider.region}:${aws:accountId}:app/GCM/Comix-Notifier",
   },
   plugins: ["serverless-webpack"],
   provider: {
@@ -42,10 +44,19 @@ const serverlessConfiguration: AWS = {
           },
           {
             Effect: "Allow",
-            Action: ["sns:Publish"],
+            Action: [
+              "sns:Publish",
+              "sns:CreatePlatformEndpoint",
+              "sns:Subscribe",
+            ],
             Resource: {
               Ref: "ComixNotifierTopic",
             },
+          },
+          {
+            Effect: "Allow",
+            Action: ["sns:CreatePlatformEndpoint"],
+            Resource: "${self:custom.platformApplicationArn}",
           },
         ],
       },
