@@ -1,6 +1,9 @@
 import { APIGatewayProxyEvent } from "aws-lambda";
+import { subscribeForNotifications } from "@application/use_cases/subscribeForNotifications";
+
 export const subscribe = async (event: APIGatewayProxyEvent) => {
   try {
+    await subscribeForNotifications(token);
     return {
       statusCode: 204,
       body: "",
