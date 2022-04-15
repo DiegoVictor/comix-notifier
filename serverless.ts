@@ -1,6 +1,7 @@
 import type { AWS } from "@serverless/typescript";
 
 import ComixNotifierMain from "@functions/main";
+import ComixNotifierSubscribe from "@functions/subscribe";
 
 const serverlessConfiguration: AWS = {
   service: "comix-notifier",
@@ -65,6 +66,7 @@ const serverlessConfiguration: AWS = {
   },
   functions: {
     ComixNotifierMain,
+    ComixNotifierSubscribe,
   },
   resources: {
     Resources: {
