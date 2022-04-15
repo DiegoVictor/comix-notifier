@@ -14,7 +14,8 @@
     "@aws-sdk/client-sns": "^3.58.0",
     "@aws-sdk/util-dynamodb": "^3.58.0",
     "axios": "^0.26.1",
-    "source-map-support": "^0.5.19"
+    "source-map-support": "^0.5.19",
+    "zod": "^3.14.4"
   },
   "devDependencies": {
     "@faker-js/faker": "^6.1.2",
