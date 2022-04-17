@@ -75,3 +75,4 @@ dist/
 # @end expo-cli
 .env
 google-services.json
+*.keystore
