@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import {StyleSheet, Text, View } from "react-native";
 import messaging from "@react-native-firebase/messaging";
+import notifee from "@notifee/react-native";
 import { StatusBar } from "expo-status-bar";
 
 export default function App() {
   const [token, setToken] = useState("");
+  const [channelId, setChannelId] = useState(null);
 
   useEffect(() => {
     messaging()
@@ -15,6 +17,18 @@ export default function App() {
       });
   }, []);
 
+  useEffect(() => {
+    if (token) {
+      notifee
+        .createChannel({
+          id: "default",
+          name: "Default Channel",
+        })
+        .then((defaultChannelId) => {
+          setChannelId(defaultChannelId);
+        });
+    }
+  }, [token]);
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
@@ -22,6 +36,11 @@ export default function App() {
       <Text style={styles.code}>
         {token || "Failed to get the device token"}
       </Text>
+      {channelId && (
+        <>
+          <Text>Provide an API Key and press the send button.</Text>
+        </>
+      )}
     </View>
   );
 }
