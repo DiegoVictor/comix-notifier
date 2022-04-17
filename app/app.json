@@ -3,6 +3,7 @@
     "name": "Comix Notifier",
     "plugins": [
       "@react-native-firebase/app",
+      "@notifee/react-native"
     ],
     "slug": "ComixNotifier",
     "version": "1.0.0",
