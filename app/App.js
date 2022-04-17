@@ -12,6 +12,24 @@ export default function App() {
   const [disabled, setDisabled] = useState(false);
   const [apiKey, setApiKey] = useState("");
 
+  const notificationHandler = useCallback(
+    async (remoteMessage) => {
+      if (remoteMessage.notification) {
+        console.log(JSON.stringify(remoteMessage));
+
+        const { title, body } = remoteMessage.notification;
+        await notifee.displayNotification({
+          title,
+          body,
+          android: {
+            channelId,
+          },
+        });
+      }
+    },
+    [channelId]
+  );
+
   const subscribe = useCallback(async () => {
     try {
       if (token.length > 0) {
@@ -60,6 +78,13 @@ export default function App() {
         });
     }
   }, [token]);
+
+  useEffect(() => {
+    if (channelId) {
+      messaging().onMessage(notificationHandler);
+    }
+  }, [channelId]);
+
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
