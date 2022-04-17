@@ -1,6 +1,9 @@
 {
   "expo": {
     "name": "Comix Notifier",
+    "plugins": [
+      "@react-native-firebase/app",
+    ],
     "slug": "ComixNotifier",
     "version": "1.0.0",
     "orientation": "portrait",
