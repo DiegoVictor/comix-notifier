@@ -20,6 +20,11 @@ export const main = async () => {
         updateConfigById(id, updatedCatalog)
       );
     }
+
+    return {
+      statusCode: 204,
+      body: "",
+    };
   } catch (err) {
     console.log(err);
   }
