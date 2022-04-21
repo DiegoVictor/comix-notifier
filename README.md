@@ -19,7 +19,7 @@ This application scrapes the [Comix Book Shop](http://www.comix.com.br) website,
   * [Configuring](#configuring)
     * [.env](#env)
 * [Usage](#usage)
-  * [API Key](#bearer-token)
+  * [API Key](#api-key)
   * [Routes](#routes)
     * [Requests](#requests)
 * [Running the tests](#running-the-tests)
