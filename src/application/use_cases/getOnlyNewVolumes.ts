@@ -1,4 +1,4 @@
-import { IVolume } from "@application/contracts/IVolume";
+import { IVolume } from '@application/contracts/IVolume';
 
 export const getOnlyNewVolumes = (
   volumes: IVolume[],

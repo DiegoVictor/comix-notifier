@@ -1,6 +1,6 @@
-import * as configRepository from "@infra/repositories/config";
-import * as Config from "@entities/Config";
-import { IConfig } from "@application/contracts/IConfig";
+import * as configRepository from '@infra/repositories/config';
+import * as Config from '@entities/Config';
+import { IConfig } from '@application/contracts/IConfig';
 
 type CatalogConfig = Record<string, number>;
 
@@ -21,6 +21,6 @@ const getOrCreateConfig = async <T>(name: string, fallbackValue: T) =>
 
 export const getConfigs = async () =>
   Promise.all([
-    getOrCreateConfig<string[]>("urls", [process.env.FALLBACK_MANGA_URL]),
-    getOrCreateConfig<CatalogConfig>("catalog", {}),
+    getOrCreateConfig<string[]>('urls', [process.env.FALLBACK_MANGA_URL]),
+    getOrCreateConfig<CatalogConfig>('catalog', {}),
   ]);

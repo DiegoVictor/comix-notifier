@@ -1,8 +1,8 @@
-import { IConfig } from "@application/contracts/IConfig";
-import { DynamoDB, ScanCommandOutput } from "@aws-sdk/client-dynamodb";
-import { marshall, unmarshall } from "@aws-sdk/util-dynamodb";
+import { DynamoDB, ScanCommandOutput } from '@aws-sdk/client-dynamodb';
+import { marshall, unmarshall } from '@aws-sdk/util-dynamodb';
 
-import * as Config from "@entities/Config";
+import * as Config from '@entities/Config';
+import { IConfig } from '@application/contracts/IConfig';
 
 const dynamodb = new DynamoDB({ region: process.env.REGION });
 
@@ -15,7 +15,7 @@ export const getOneByName = async <T>(name: string) =>
       TableName: process.env.CONFIG_TABLE,
       ScanFilter: {
         name: {
-          ComparisonOperator: "EQ",
+          ComparisonOperator: 'EQ',
           AttributeValueList: [
             {
               S: name,
@@ -44,8 +44,8 @@ export const updateOneById = async <T>(id: string, value: T) => {
   await dynamodb.updateItem({
     TableName: process.env.CONFIG_TABLE,
     Key: marshall({ id }),
-    UpdateExpression: "set #value = :catalog",
-    ExpressionAttributeValues: marshall({ ":catalog": value }),
-    ExpressionAttributeNames: { "#value": "value" },
+    UpdateExpression: 'set #value = :catalog',
+    ExpressionAttributeValues: marshall({ ':catalog': value }),
+    ExpressionAttributeNames: { '#value': 'value' },
   });
 };

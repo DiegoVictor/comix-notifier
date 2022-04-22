@@ -1,18 +1,18 @@
-import { handlerPath } from "@utils/handlerResolver";
+import { handlerPath } from '@utils/handlerResolver';
 
 export default {
   handler: `${handlerPath(__dirname)}/handler.main`,
   environment: {
     TOPIC_ARN: {
-      Ref: "ComixNotifierTopic",
+      Ref: 'ComixNotifierTopic',
     },
-    CONFIG_TABLE: "${self:custom.configTable}",
-    FALLBACK_MANGA_URL: "${self:custom.fallbackMangaUrl}",
+    CONFIG_TABLE: '${self:custom.configTable}',
+    FALLBACK_MANGA_URL: '${self:custom.fallbackMangaUrl}',
   },
   events: [
     {
       eventBridge: {
-        schedule: "rate(${self:custom.executionInterval})",
+        schedule: 'rate(${self:custom.executionInterval})',
       },
     },
   ],

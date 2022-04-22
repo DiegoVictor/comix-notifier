@@ -1,26 +1,27 @@
-import { IConfig } from "@application/contracts/IConfig";
-import { create } from "@entities/Config";
-import faker from "@faker-js/faker";
-import factory from "../../utils/factory";
+import faker from '@faker-js/faker';
+
+import { IConfig } from '@application/contracts/IConfig';
+import { create } from '@entities/Config';
+import factory from '../../utils/factory';
 
 const mockRandomUUID = jest.fn();
-jest.mock("crypto", () => ({
+jest.mock('crypto', () => ({
   randomUUID: () => mockRandomUUID(),
 }));
 
-describe("Config.create", () => {
-  it("should be able to create a config instance", async () => {
+describe('Config.create', () => {
+  it('should be able to create a config instance', async () => {
     const { id, name, value } = await factory.attrs<
       IConfig<{ [key: string]: number }>
-    >("Config");
+    >('Config');
 
     expect(create({ id, name, value })).toStrictEqual({ id, name, value });
   });
 
-  it("should be able to create a config instance with id", async () => {
+  it('should be able to create a config instance with id', async () => {
     const { name, value } = await factory.attrs<
       IConfig<{ [key: string]: number }>
-    >("Config");
+    >('Config');
 
     const id = faker.datatype.number();
     mockRandomUUID.mockReturnValueOnce(id);

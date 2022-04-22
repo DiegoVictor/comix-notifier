@@ -1,20 +1,51 @@
-import { useCallback, useEffect, useState } from "react";
-import { Alert, Button, StyleSheet, Text, TextInput, View } from "react-native";
-import messaging from "@react-native-firebase/messaging";
-import notifee from "@notifee/react-native";
-import { StatusBar } from "expo-status-bar";
-import axios from "axios";
-import Constants from "expo-constants";
+import { useCallback, useEffect, useState } from 'react';
+import { Alert, Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import messaging from '@react-native-firebase/messaging';
+import notifee from '@notifee/react-native';
+import { StatusBar } from 'expo-status-bar';
+import axios from 'axios';
+import Constants from 'expo-constants';
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 20,
+  },
+  code: {
+    backgroundColor: '#eee',
+    borderRadius: 15,
+    color: '#333',
+    marginVertical: 10,
+    marginBottom: 20,
+    paddingHorizontal: 15,
+    paddingVertical: 12,
+  },
+  input: {
+    borderColor: '#eee',
+    borderRadius: 15,
+    borderWidth: 1,
+    marginBottom: 20,
+    marginTop: 10,
+    paddingHorizontal: 15,
+    paddingVertical: 12,
+    textAlign: 'center',
+    width: '98%',
+  },
+});
 
 export default function App() {
-  const [token, setToken] = useState("");
+  const [token, setToken] = useState('');
   const [channelId, setChannelId] = useState(null);
   const [disabled, setDisabled] = useState(false);
-  const [apiKey, setApiKey] = useState("");
+  const [apiKey, setApiKey] = useState('');
 
   const notificationHandler = useCallback(
     async (remoteMessage) => {
       if (remoteMessage.notification) {
+        /* eslint-disable no-console */
         console.log(JSON.stringify(remoteMessage));
 
         const { title, body } = remoteMessage.notification;
@@ -42,12 +73,12 @@ export default function App() {
           },
           {
             headers: {
-              "x-api-key": apiKey,
+              'x-api-key': apiKey,
             },
           }
         );
 
-        Alert.alert("Ready to receive notification!");
+        Alert.alert('Ready to receive notification!');
       }
     } catch (err) {
       console.log(err);
@@ -70,8 +101,8 @@ export default function App() {
     if (token) {
       notifee
         .createChannel({
-          id: "default",
-          name: "Default Channel",
+          id: 'default',
+          name: 'Default Channel',
         })
         .then((defaultChannelId) => {
           setChannelId(defaultChannelId);
@@ -90,7 +121,7 @@ export default function App() {
       <StatusBar style="auto" />
       <Text>Retrieving the device token.</Text>
       <Text style={styles.code}>
-        {token || "Failed to get the device token"}
+        {token || 'Failed to get the device token'}
       </Text>
       {channelId && (
         <>
@@ -107,33 +138,3 @@ export default function App() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-    paddingHorizontal: 20,
-  },
-  code: {
-    backgroundColor: "#eee",
-    borderRadius: 15,
-    color: "#333",
-    marginVertical: 10,
-    marginBottom: 20,
-    paddingHorizontal: 15,
-    paddingVertical: 12,
-  },
-  input: {
-    borderColor: "#eee",
-    borderRadius: 15,
-    borderWidth: 1,
-    marginBottom: 20,
-    marginTop: 10,
-    paddingHorizontal: 15,
-    paddingVertical: 12,
-    textAlign: "center",
-    width: "98%",
-  },
-});

@@ -1,18 +1,18 @@
-import { handlerPath } from "@utils/handlerResolver";
+import { handlerPath } from '@utils/handlerResolver';
 
 export default {
   handler: `${handlerPath(__dirname)}/handler.subscribe`,
   environment: {
     TOPIC_ARN: {
-      Ref: "ComixNotifierTopic",
+      Ref: 'ComixNotifierTopic',
     },
-    PLATFORM_APPLICATION_ARN: "${self:custom.platformApplicationArn}",
+    PLATFORM_APPLICATION_ARN: '${self:custom.platformApplicationArn}',
   },
   events: [
     {
       http: {
-        path: "/subscribe",
-        method: "POST",
+        path: '/subscribe',
+        method: 'POST',
         private: true,
       },
     },

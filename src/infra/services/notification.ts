@@ -1,11 +1,11 @@
-import { SNS } from "@aws-sdk/client-sns";
+import { SNS } from '@aws-sdk/client-sns';
 
 const sns = new SNS({ region: process.env.REGION });
 
 export const send = async (title: string, body: string) => {
   await sns.publish({
     Message: JSON.stringify({
-      default: "",
+      default: `${title}: ${body}`,
       GCM: JSON.stringify({
         notification: {
           title,
@@ -13,7 +13,7 @@ export const send = async (title: string, body: string) => {
         },
       }),
     }),
-    MessageStructure: "json",
+    MessageStructure: 'json',
     TopicArn: process.env.TOPIC_ARN,
   });
 };
@@ -30,7 +30,7 @@ export const subscribe = async (Token: string) => {
   const Endpoint = await createEndpoint(Token);
   await sns.subscribe({
     TopicArn: process.env.TOPIC_ARN,
-    Protocol: "application",
+    Protocol: 'application',
     Endpoint,
     ReturnSubscriptionArn: true,
   });

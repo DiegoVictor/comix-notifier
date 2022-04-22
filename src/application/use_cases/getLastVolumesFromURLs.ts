@@ -1,10 +1,10 @@
-import { getPage } from "@infra/services/comix";
-import * as Product from "@entities/Product";
-import * as Volume from "@entities/Volume";
-import { IProduct } from "@application/contracts/IProduct";
+import { getPage } from '@infra/services/comix';
+import * as Product from '@entities/Product';
+import * as Volume from '@entities/Volume';
+import { IProduct } from '@application/contracts/IProduct';
 
 export const getSlugFromURL = (url: string) =>
-  url.replace(/http:\/\/www\.comix\.com\.br\/mangas\/\w\/(.+)\.html/, "$1");
+  url.replace(/http:\/\/www\.comix\.com\.br\/mangas\/\w\/(.+)\.html/, '$1');
 
 const getVolumesFromPage = ({ data: text, url }) => {
   const products: string[] = text.match(Product.PRODUCT_NAME_REGEX);
@@ -12,7 +12,7 @@ const getVolumesFromPage = ({ data: text, url }) => {
 
   return products
     .map((product) => Product.create({ product, slug }))
-    .filter(({ number }) => !isNaN(number));
+    .filter(({ number }) => !Number.isNaN(number));
 };
 
 const getLastVolume = (products: IProduct[]) =>
