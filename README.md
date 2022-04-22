@@ -72,10 +72,11 @@ Rename the `.env.example` in the `app` directory to `.env` and configure the URL
 # Usage
 In order to be able to subscribe to the topic and start to receive push notifications you will need to:
 
-* [Create an API Key](https://docs.aws.amazon.com/pt_br/apigateway/latest/developerguide/api-gateway-setup-api-key-with-console.html#api-gateway-usage-plan-create-apikey), then [create and configure a usage plan](https://docs.aws.amazon.com/pt_br/apigateway/latest/developerguide/api-gateway-create-usage-plans-with-console.html#api-gateway-usage-plan-create) to it, copy the key, this will be necessary in the next steps.
+* [Create an API Key](https://docs.aws.amazon.com/pt_br/apigateway/latest/developerguide/api-gateway-setup-api-key-with-console.html#api-gateway-usage-plan-create-apikey), then [create and configure a usage plan](https://docs.aws.amazon.com/pt_br/apigateway/latest/developerguide/api-gateway-create-usage-plans-with-console.html#api-gateway-usage-plan-create) to it. Copy the key, this will be necessary in the next steps and don't forget to associate the API's stage to the created plan! .
 
 Install the mobile app, the first build must be through USB connection, so connect your device (or just open your emulator) and run:
 ```
+$ cd app
 $ yarn android
 ```
 > For iOS use `ios` instead of `android`, but this app was tested only with Android through USB connection and [Android Studio Emulator](https://developer.android.com/studio/run/managing-avds), is strongly recommended to use the same system.
