@@ -125,6 +125,7 @@ Or:
 ```
 $ npm run test
 ```
+> Run the command in the root folder
 
 ## Coverage report
 You can see the coverage report inside `tests/coverage`. They are automatically created after the tests run.
