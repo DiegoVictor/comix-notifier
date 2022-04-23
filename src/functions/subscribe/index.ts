@@ -8,6 +8,7 @@ export default {
     },
     PLATFORM_APPLICATION_ARN: '${self:custom.platformApplicationArn}',
   },
+  name: 'ComixNotifierSubscribe',
   events: [
     {
       http: {
