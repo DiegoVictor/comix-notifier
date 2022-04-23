@@ -6,9 +6,7 @@ export default {
     TOPIC_ARN: {
       Ref: 'ComixNotifierTopic',
     },
-    CONFIG_TABLE: {
-      'Fn::GetAtt': ['ComixNotifierConfigTable', 'Arn'],
-    },
+    CONFIG_TABLE: '${self:custom.configTableName}',
     FALLBACK_MANGA_URL: '${self:custom.fallbackMangaUrl}',
   },
   name: 'ComixNotifierMain',

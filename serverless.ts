@@ -13,6 +13,7 @@ const serverlessConfiguration: AWS = {
       includeModules: true,
     },
     fallbackMangaUrl: 'http://www.comix.com.br/mangas/a/ataque-dos-titas.html',
+    configTableName: 'ComixNotifierConfigs',
     executionInterval: '1 day',
     platformApplicationArn:
       'arn:aws:sns:${self:provider.region}:${aws:accountId}:app/GCM/Comix-Notifier',
@@ -78,7 +79,7 @@ const serverlessConfiguration: AWS = {
       ComixNotifierConfigTable: {
         Type: 'AWS::DynamoDB::Table',
         Properties: {
-          TableName: 'ComixNotifierConfigs',
+          TableName: '${self:custom.configTableName}',
           AttributeDefinitions: [
             {
               AttributeName: 'id',
