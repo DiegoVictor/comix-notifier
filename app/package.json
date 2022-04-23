@@ -10,9 +10,9 @@
     "eject": "expo eject"
   },
   "dependencies": {
-    "@notifee/react-native": "^5.1.0",
-    "@react-native-firebase/app": "^14.7.0",
-    "@react-native-firebase/messaging": "^14.7.0",
+    "@notifee/react-native": "^5.2.0",
+    "@react-native-firebase/app": "^14.8.0",
+    "@react-native-firebase/messaging": "^14.8.0",
     "axios": "^0.26.1",
     "dotenv": "^16.0.0",
     "expo": "~44.0.0",

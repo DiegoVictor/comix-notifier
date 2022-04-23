@@ -1335,10 +1335,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     "fastq" "^1.6.0"
 
-"@notifee/react-native@^5.1.0":
-  "integrity" "sha512-8fa2tTCgvdYO/xTqgoax1VxF/bLOAKIZd9hM85/ALUMQZX9LQz+y7rVMBCt3ZWI+lIVaZ50Px/4cMWYMnmqy9g=="
-  "resolved" "https://registry.npmjs.org/@notifee/react-native/-/react-native-5.1.0.tgz"
-  "version" "5.1.0"
+"@notifee/react-native@^5.2.0":
+  "integrity" "sha512-7zAL+jRNgfGffAAY4TFaNnNIEf7NrK4cRYWP2tEqCBYapvEfHGGdciQb0bhbpw/xcKJ/SyCKHgPILnHnTxjFzA=="
+  "resolved" "https://registry.npmjs.org/@notifee/react-native/-/react-native-5.2.0.tgz"
+  "version" "5.2.0"
 
 "@react-native-community/cli-debugger-ui@^5.0.1":
   "integrity" "sha512-5gGKaaXYOVE423BUqxIfvfAVSj5Cg1cU/TpGbeg/iqpy2CfqyWqJB3tTuVUbOOiOvR5wbU8tti6pIi1pchJ+oA=="
@@ -1464,19 +1464,19 @@
     "sudo-prompt" "^9.0.0"
     "wcwidth" "^1.0.1"
 
-"@react-native-firebase/app@^14.7.0", "@react-native-firebase/app@14.7.0":
-  "integrity" "sha512-/TdFv0L4AOEdKbAqmUu0yDXWq0Viw9sEX5mprPQDQbnctEJVwDLWehJkKx2CMiGeZox7VU2cshBLD0AC82XTtQ=="
-  "resolved" "https://registry.npmjs.org/@react-native-firebase/app/-/app-14.7.0.tgz"
-  "version" "14.7.0"
+"@react-native-firebase/app@^14.8.0", "@react-native-firebase/app@14.8.0":
+  "integrity" "sha512-yBkszXiyFKO8GVPaqdgu1W3AwZC6KvOIIcNMA8fUKW//RTDEBQvdiVJAtwRd/R1nYMPU02Zoq+xN0luBQRjGlQ=="
+  "resolved" "https://registry.npmjs.org/@react-native-firebase/app/-/app-14.8.0.tgz"
+  "version" "14.8.0"
   dependencies:
     "@expo/config-plugins" "^4.0.18"
     "opencollective-postinstall" "^2.0.1"
     "superstruct" "^0.6.2"
 
-"@react-native-firebase/messaging@^14.7.0":
-  "integrity" "sha512-G0GmmbmmAvhEltK7Rr1A3Mz6vH4qsX6OaqYNzbhgHvP2jvTIuchLcWozjTGcH/0OsXZz15fRe0WjQ3aMS2TTpg=="
-  "resolved" "https://registry.npmjs.org/@react-native-firebase/messaging/-/messaging-14.7.0.tgz"
-  "version" "14.7.0"
+"@react-native-firebase/messaging@^14.8.0":
+  "integrity" "sha512-rLwmewwhECAZe16bPMNTZvyg4dZO7/wJCQXJMc06+6LlyrAWIs0FYg2osznHmfmxAfOe7OL4V0LMoWA1Z7Fxhg=="
+  "resolved" "https://registry.npmjs.org/@react-native-firebase/messaging/-/messaging-14.8.0.tgz"
+  "version" "14.8.0"
 
 "@react-native/assets@1.0.0":
   "integrity" "sha512-KrwSpS1tKI70wuKl68DwJZYEvXktDHdZMG0k2AXD/rJVSlB23/X2CB2cutVR0HwNMJIal9HOUOBB2rVfa6UGtQ=="
