@@ -1,7 +1,7 @@
 # Comix Notifier
 ![CircleCI](https://img.shields.io/circleci/build/github/DiegoVictor/comix-notifier?style=flat-square&logo=circleci)
-[![serverless](https://img.shields.io/badge/serverless-3.14.0-FD5750?style=flat-square&logo=serverless)](https://www.serverless.com/)
-[![eslint](https://img.shields.io/badge/eslint-8.13.0-4b32c3?style=flat-square&logo=eslint)](https://eslint.org/)
+[![serverless](https://img.shields.io/badge/serverless-3.15.2-FD5750?style=flat-square&logo=serverless)](https://www.serverless.com/)
+[![eslint](https://img.shields.io/badge/eslint-8.14.0-4b32c3?style=flat-square&logo=eslint)](https://eslint.org/)
 [![jest](https://img.shields.io/badge/jest-27.5.1-brightgreen?style=flat-square&logo=jest)](https://jestjs.io/)
 [![expo](https://img.shields.io/badge/expo-44.0.6-000000?style=flat-square&logo=expo)](https://expo.io/)
 [![typescript](https://img.shields.io/badge/typescript-4.6.3-3178c6?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
@@ -35,6 +35,8 @@ This application scrapes the [Comix Book Shop](http://www.comix.com.br) website,
     * [Lambda](https://aws.amazon.com/lambda)
     * [API Gateway](https://aws.amazon.com/api-gateway/)
     * [EventBridge](https://aws.amazon.com/eventbridge/)
+  * Firebase Account
+    * [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging)
 
 # Installing
 Easy peasy lemon squeezy:
