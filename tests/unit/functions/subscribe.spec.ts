@@ -84,6 +84,8 @@ describe('subscribe', () => {
       throw error;
     });
 
+    mockToken.mockReturnValueOnce({ token });
+
     const response = await subscribe({
       body: JSON.stringify({ token }),
     } as APIGatewayProxyEvent);
@@ -99,8 +101,10 @@ describe('subscribe', () => {
     });
   });
 
-  it('should not be able with an invalid token', async () => {
+  it('should be able to subscribe with a valid token', async () => {
     const token = faker.random.alphaNumeric(32);
+
+    mockToken.mockReturnValueOnce({ token });
 
     const response = await subscribe({
       body: JSON.stringify({ token }),

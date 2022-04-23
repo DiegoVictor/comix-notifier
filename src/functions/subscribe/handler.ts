@@ -6,9 +6,8 @@ import * as validate from '@application/validators/token';
 
 export const subscribe = async (event: APIGatewayProxyEvent) => {
   try {
-    const { token } = JSON.parse(event.body || '{}');
-
-    validate.token({ token });
+    const body = JSON.parse(event.body || '{}');
+    const { token } = validate.token(body);
 
     await subscribeForNotifications(token);
     return {
