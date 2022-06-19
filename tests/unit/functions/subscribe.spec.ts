@@ -1,4 +1,4 @@
-import faker from '@faker-js/faker';
+import { faker } from '@faker-js/faker';
 import { APIGatewayProxyEvent } from 'aws-lambda';
 import { ZodError, ZodIssueCode, ZodParsedType } from 'zod';
 

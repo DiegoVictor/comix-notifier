@@ -1,4 +1,4 @@
-import faker from '@faker-js/faker';
+import { faker } from '@faker-js/faker';
 
 import { updateConfigById } from '@application/use_cases/updateConfigById';
 

@@ -1,5 +1,5 @@
 import factory from 'factory-girl';
-import faker from "@faker-js/faker";
+import { faker } from '@faker-js/faker';
 
 factory.define('Config', {}, () => {
   const fieldName = faker.lorem.word();

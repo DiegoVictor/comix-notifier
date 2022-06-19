@@ -1,4 +1,4 @@
-import faker from '@faker-js/faker';
+import { faker } from '@faker-js/faker';
 
 import { IConfig } from '@application/contracts/IConfig';
 import { getConfigs } from '@application/use_cases/getConfigs';

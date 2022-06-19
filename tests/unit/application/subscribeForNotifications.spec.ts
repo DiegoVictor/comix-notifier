@@ -1,4 +1,4 @@
-import faker from '@faker-js/faker';
+import { faker } from '@faker-js/faker';
 
 import { subscribeForNotifications } from '@application/use_cases/subscribeForNotifications';
 

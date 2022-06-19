@@ -19,7 +19,7 @@
     "zod": "^3.14.4"
   },
   "devDependencies": {
-    "@faker-js/faker": "^6.1.2",
+    "@faker-js/faker": "^7.2.0",
     "@serverless/typescript": "^3.8.0",
     "@types/aws-lambda": "^8.10.71",
     "@types/factory-girl": "^5.0.8",

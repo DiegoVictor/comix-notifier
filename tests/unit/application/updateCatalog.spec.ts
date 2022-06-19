@@ -1,4 +1,4 @@
-import faker from '@faker-js/faker';
+import { faker } from '@faker-js/faker';
 
 import { IVolume } from '@application/contracts/IVolume';
 import { updateCatalog } from '@application/use_cases/updateCatalog';
