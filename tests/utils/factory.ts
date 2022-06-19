@@ -1,7 +1,7 @@
-import factory from "factory-girl";
+import factory from 'factory-girl';
 import faker from "@faker-js/faker";
 
-factory.define("Config", {}, () => {
+factory.define('Config', {}, () => {
   const fieldName = faker.lorem.word();
   return {
     id: faker.datatype.uuid,
@@ -12,7 +12,7 @@ factory.define("Config", {}, () => {
   };
 });
 
-factory.define("Product", {}, () => {
+factory.define('Product', {}, () => {
   const title = faker.commerce.productName();
   return {
     title,
