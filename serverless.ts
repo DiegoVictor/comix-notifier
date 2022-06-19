@@ -18,6 +18,9 @@ const serverlessConfiguration: AWS = {
     platformApplicationArn:
       'arn:aws:sns:${self:provider.region}:${aws:accountId}:app/GCM/Comix-Notifier',
   },
+  package: {
+    patterns: ['!node_modules/**'],
+  },
   plugins: ['serverless-webpack'],
   provider: {
     name: 'aws',
@@ -98,6 +101,12 @@ const serverlessConfiguration: AWS = {
           },
         },
       },
+    },
+  },
+  layers: {
+    Nodejs: {
+      path: 'layers/nodejs',
+      compatibleRuntimes: ['nodejs14.x'],
     },
   },
 };
