@@ -58,6 +58,16 @@ The application sends and receives notifications (API and mobile application, re
 * Access your AWS account, open the [SNS panel](https://console.aws.amazon.com/sns/v3/home) and [create a platform application](https://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-register.html) with the following name `Comix-Notifier`, select `Firebase Cloud Messaging (FCM)` as the platform and paste the API Cloud Messaging Token that you copied previously.
 > If you would like to use another name just remember to update the platform's ARN key in the `serverless.ts` (`custom.platformApplicationArn`).
 
+Install the AWS Layers before to deploy:
+```
+$ cd layers/nodejs
+$ npm install
+```
+Or:
+```
+$ cd layers/nodejs
+$ yarn
+```
 Now you are ready to deploy the API, just run:
 ```
 $ sls deploy
