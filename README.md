@@ -7,7 +7,7 @@
 [![expo](https://img.shields.io/badge/expo-44.0.6-000000?style=flat-square&logo=expo)](https://expo.io/)
 [![typescript](https://img.shields.io/badge/typescript-4.6.3-3178c6?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 [![coverage](https://img.shields.io/codecov/c/gh/DiegoVictor/comix-notifier?logo=codecov&style=flat-square)](https://codecov.io/gh/DiegoVictor/comix-notifier)
-[![MIT License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](https://github.com/DiegoVictor/comix-notifier/blob/master/LICENSE)
+[![MIT License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](https://raw.githubusercontent.com/DiegoVictor/comix-notifier/main/LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)<br>
 [![Run in Insomnia](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=Comix%20Notifier&uri=https%3A%2F%2Fraw.githubusercontent.com%2FDiegoVictor%2Fcomix-notifier%2Fmain%2FInsomnia_2022-04-19.json)
 
