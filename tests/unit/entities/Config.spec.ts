@@ -11,17 +11,15 @@ jest.mock('crypto', () => ({
 
 describe('Config.create', () => {
   it('should be able to create a config instance', async () => {
-    const { id, name, value } = await factory.attrs<
-      IConfig<{ [key: string]: number }>
-    >('Config');
+    const { id, name, value } =
+      await factory.attrs<IConfig<{ [key: string]: number }>>('Config');
 
     expect(create({ id, name, value })).toStrictEqual({ id, name, value });
   });
 
   it('should be able to create a config instance with id', async () => {
-    const { name, value } = await factory.attrs<
-      IConfig<{ [key: string]: number }>
-    >('Config');
+    const { name, value } =
+      await factory.attrs<IConfig<{ [key: string]: number }>>('Config');
 
     const id = faker.number.int();
     mockRandomUUID.mockReturnValueOnce(id);
