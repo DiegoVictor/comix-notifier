@@ -74,7 +74,7 @@ describe('subscribe', () => {
   });
 
   it('should not be able to subscribe when an unexpected error occurs', async () => {
-    const token = faker.random.alphaNumeric(32);
+    const token = faker.string.alphanumeric(32);
 
     const log = jest.spyOn(console, 'log');
     log.mockImplementationOnce(() => {});
@@ -102,7 +102,7 @@ describe('subscribe', () => {
   });
 
   it('should be able to subscribe with a valid token', async () => {
-    const token = faker.random.alphaNumeric(32);
+    const token = faker.string.alphanumeric(32);
 
     mockToken.mockReturnValueOnce({ token });
 

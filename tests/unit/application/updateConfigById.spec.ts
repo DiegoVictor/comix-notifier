@@ -9,7 +9,7 @@ jest.mock('@infra/repositories/config', () => ({
 
 describe('updateConfigById', () => {
   it('should be able to update a config by its id', async () => {
-    const id = faker.datatype.uuid();
+    const id = faker.string.uuid();
     const value = faker.lorem.words(3).split(/\s|,|\./);
 
     await updateConfigById<string[]>(id, value);

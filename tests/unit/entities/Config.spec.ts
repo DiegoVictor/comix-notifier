@@ -23,7 +23,7 @@ describe('Config.create', () => {
       IConfig<{ [key: string]: number }>
     >('Config');
 
-    const id = faker.datatype.number();
+    const id = faker.number.int();
     mockRandomUUID.mockReturnValueOnce(id);
 
     expect(create({ name, value })).toStrictEqual({ id, name, value });

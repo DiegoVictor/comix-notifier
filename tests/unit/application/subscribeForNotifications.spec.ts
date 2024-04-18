@@ -9,7 +9,7 @@ jest.mock('@infra/services/notification', () => ({
 
 describe('subscribeForNotifications', () => {
   it('should be able to subscribe', async () => {
-    const token = faker.random.alphaNumeric(32);
+    const token = faker.string.alphanumeric(32);
 
     await subscribeForNotifications(token);
 
