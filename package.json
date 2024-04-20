@@ -15,7 +15,7 @@
     "@aws-sdk/util-dynamodb": "^3.109.0",
     "aws-lambda": "^1.0.7",
     "axios": "^1.6.8",
-    "zod": "^3.14.4"
+    "zod": "^3.22.5"
   },
   "devDependencies": {
     "@faker-js/faker": "^8.4.1",
