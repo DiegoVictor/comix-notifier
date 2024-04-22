@@ -90,7 +90,7 @@ In order to be able to subscribe to the topic and start to receive push notifica
 Install the mobile app, the first build must be through USB connection, so connect your device (or just open your emulator) and run:
 ```
 $ cd app
-$ yarn android
+$ npx react-native run-android
 ```
 > For iOS use `ios` instead of `android`, but this app was tested only with Android through USB connection and [Android Studio Emulator](https://developer.android.com/studio/run/managing-avds), is strongly recommended to use the same system.
 
@@ -100,7 +100,7 @@ $ yarn start
 ```
 Or:
 ```
-$ npm run start
+$ npx expo run:android
 ```
 
 After install the app, follow the instructions on the screen.
