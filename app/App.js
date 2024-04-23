@@ -67,7 +67,7 @@ export default function App() {
         setDisabled(true);
 
         await axios.post(
-          Constants.manifest.extra.SUBSCRIPTION_URL,
+          process.env.EXPO_PUBLIC_SUBSCRIPTION_URL,
           {
             token,
           },
