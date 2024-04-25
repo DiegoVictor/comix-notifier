@@ -4,7 +4,7 @@
 [![eslint](https://img.shields.io/badge/eslint-8.57.0-4b32c3?style=flat-square&logo=eslint)](https://eslint.org/)
 [![airbnb-style](https://flat.badgen.net/badge/style-guide/airbnb/ff5a5f?icon=airbnb)](https://github.com/airbnb/javascript)
 [![jest](https://img.shields.io/badge/jest-29.7.0-brightgreen?style=flat-square&logo=jest)](https://jestjs.io/)
-[![expo](https://img.shields.io/badge/expo-44.0.6-000000?style=flat-square&logo=expo)](https://expo.io/)
+[![expo](https://img.shields.io/badge/expo-50.0.17-000000?style=flat-square&logo=expo)](https://expo.io/)
 [![typescript](https://img.shields.io/badge/typescript-5.4.5-3178c6?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 [![coverage](https://img.shields.io/codecov/c/gh/DiegoVictor/comix-notifier?logo=codecov&style=flat-square)](https://codecov.io/gh/DiegoVictor/comix-notifier)
 [![MIT License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](https://raw.githubusercontent.com/DiegoVictor/comix-notifier/main/LICENSE)
