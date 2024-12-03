@@ -1,0 +1,66 @@
+{
+	"info": {
+		"_postman_id": "bdd0020a-dc02-4163-adc2-4a75f5bc13b1",
+		"name": "Comix Notifier",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4346128"
+	},
+	"item": [
+		{
+			"name": "Subscribe",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": []
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "rJvz2XWV611PycVISNd2T43pCB4X1g5n7E8iyT58"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"ff7XgLfwSGaVFS05iayn58:APA91bEJ508hqz8hr2EZttm845wn9plsRdJTArMDukr4xTUwdKq_G9qYZCnRIi7lK0M5OeMrnws-DKNNd__TNvnOLmekSNNcBXg3I08oAxT_wksoONXJVz0S12joypaq0-w7IEY6q7Pc\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/dev/subscribe",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"dev",
+						"subscribe"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "https://o9k4zfhd2j.execute-api.us-east-1.amazonaws.com"
+		}
+	]
+}
