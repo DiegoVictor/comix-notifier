@@ -4,7 +4,7 @@
   "main": "serverless.ts",
   "license": "MIT",
   "engines": {
-    "node": ">=14.15.0"
+    "node": ">=20.16.0"
   },
   "scripts": {
     "test": "jest --runInBand"
