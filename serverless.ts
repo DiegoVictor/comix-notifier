@@ -8,10 +8,6 @@ const serverlessConfiguration: AWS = {
   configValidationMode: 'error',
   frameworkVersion: '3',
   custom: {
-    webpack: {
-      webpackConfig: './webpack.config.js',
-      includeModules: true,
-    },
     fallbackMangaUrl: 'http://www.comix.com.br/mangas/a/ataque-dos-titas.html',
     configTableName: 'ComixNotifierConfigs',
     executionInterval: '1 day',
