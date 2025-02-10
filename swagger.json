@@ -1,0 +1,86 @@
+{
+  "openapi":"3.0.3",
+  "info": {
+    "title":"Comix Notifier",
+    "version":"1.0",
+    "license": {
+      "name": "MIT",
+      "url": "https://raw.githubusercontent.com/DiegoVictor/comix-notifier/refs/heads/main/LICENSE"
+    }
+  },
+  "servers": [
+    {
+      "url":"https://localhost:3000/dev"
+    }
+  ],
+  "paths": {
+    "/subscribe": {
+      "post": {
+        "summary": "Subscribe the device for push notifications.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "token": {
+                    "type": "string"
+                  }
+                },
+                "required": ["token"]
+              },
+              "example": {
+                "token": "ff7XgLfwSGaVFS05iayn58:APA91bEJ508hqz8hr2EZttm845wn9plsRdJTArMDukr4xTUwdKq_G9qYZCnRIi7lK0M5OeMrnws-DKNNd__TNvnOLmekSNNcBXg3I08oAxT_wksoONXJVz0S12joypaq0-w7IEY6q7Pc"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Subscription successfully created"
+          },
+          "400": {
+            "description": "Validation failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "code": {
+                        "type": "string"
+                      },
+                      "expected": {
+                        "type": "string"
+                      },
+                      "received": {},
+                      "path": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "message": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "example": [
+                  {
+                    "code": "invalid_type",
+                    "expected": "string",
+                    "received": "undefined",
+                    "path": ["token"],
+                    "message": "Required"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
