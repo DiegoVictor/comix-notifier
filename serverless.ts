@@ -14,10 +14,7 @@ const serverlessConfiguration: AWS = {
     platformApplicationArn:
       'arn:aws:sns:${self:provider.region}:${aws:accountId}:app/GCM/Comix-Notifier',
   },
-  package: {
-    patterns: ['!node_modules/**'],
-  },
-  plugins: ['serverless-webpack'],
+  plugins: ['serverless-esbuild'],
   provider: {
     name: 'aws',
     runtime: 'nodejs20.x',
@@ -67,6 +64,7 @@ const serverlessConfiguration: AWS = {
     ComixNotifierMain,
     ComixNotifierSubscribe,
   },
+  package: { individually: true },
   resources: {
     Resources: {
       ComixNotifierTopic: {
