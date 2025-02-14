@@ -40,7 +40,7 @@
             "description": "Subscription successfully created"
           },
           "400": {
-            "description": "Validation failed",
+            "description": "Validation Failed",
             "content": {
               "application/json": {
                 "schema": {
@@ -76,6 +76,28 @@
                     "message": "Required"
                   }
                 ]
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "code": 500,
+                  "message": "Oops! Something goes wrong, try again later."
+                }
               }
             }
           }
