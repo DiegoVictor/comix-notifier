@@ -96,7 +96,7 @@ describe('subscribe', () => {
       statusCode: 500,
       body: JSON.stringify({
         code: 500,
-        message: 'Ops! Something goes wrong, try again later.',
+        message: 'Oops! Something goes wrong, try again later.',
       }),
     });
   });
