@@ -51,6 +51,12 @@
                       "code": {
                         "type": "string"
                       },
+                      "options": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
                       "expected": {
                         "type": "string"
                       },
