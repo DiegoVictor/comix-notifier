@@ -1,5 +1,5 @@
 # Comix Notifier
-![CircleCI](https://img.shields.io/circleci/build/github/DiegoVictor/comix-notifier?style=flat-square&logo=circleci)
+[![CircleCI](https://img.shields.io/circleci/build/github/DiegoVictor/comix-notifier?style=flat-square&logo=circleci)](https://app.circleci.com/pipelines/github/DiegoVictor/comix-notifier?branch=main)
 [![dynamodb](https://img.shields.io/badge/dynamodb-3.556.0-4053D6?style=flat-square&logo=amazondynamodb)](https://aws.amazon.com/dynamodb)
 [![serverless](https://img.shields.io/badge/serverless-3.38.0-FD5750?style=flat-square&logo=serverless)](https://www.serverless.com/)
 [![eslint](https://img.shields.io/badge/eslint-8.57.0-4b32c3?style=flat-square&logo=eslint)](https://eslint.org/)
