@@ -1,0 +1,12 @@
+services:
+  localstack:
+    container_name: localstack
+    image: localstack/localstack
+    restart: unless-stopped
+    environment:
+      - DEBUG=1
+    ports:
+      - '4566-4599:4566-4599'
+    volumes:
+      - '${LOCALSTACK_VOLUME_DIR:-./.serverless}:/var/lib/localstack/functions'
+      - /var/run/docker.sock:/var/run/docker.sock
