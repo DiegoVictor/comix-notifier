@@ -4,7 +4,7 @@ import * as Volume from '@entities/Volume';
 import { IProduct } from '@application/contracts/IProduct';
 
 export const getSlugFromURL = (url: string) =>
-  url.replace(/http:\/\/www\.comix\.com\.br\/mangas\/\w\/(.+)\.html/, '$1');
+  url.replace(/https:\/\/www\.comix\.com\.br\/mangas\/\w\/(.+)\.html/, '$1');
 
 const getVolumesFromPage = ({ data: text, url }) => {
   const products: string[] = text.match(Product.PRODUCT_NAME_REGEX);
