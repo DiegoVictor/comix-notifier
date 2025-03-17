@@ -7,7 +7,6 @@ export default {
       Ref: 'ComixNotifierTopic',
     },
     CONFIG_TABLE: '${self:custom.configTableName}',
-    FALLBACK_MANGA_URL: '${self:custom.fallbackMangaUrl}',
   },
   name: 'ComixNotifierMain',
   events: [
