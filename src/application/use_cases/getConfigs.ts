@@ -15,8 +15,8 @@ const getOrCreateConfig = async <T>(name: string, fallbackValue: T) =>
         Config.create<T>({
           name,
           value: fallbackValue,
-        })
-      )
+        }),
+      ),
   );
 
 export const getConfigs = async () =>

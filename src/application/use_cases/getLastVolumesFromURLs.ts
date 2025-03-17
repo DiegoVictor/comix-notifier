@@ -20,11 +20,13 @@ const getLastVolume = (products: IProduct[]) =>
     products.reduce(
       (previous, product) =>
         !previous || product.number > previous.number ? product : previous,
-      null
-    )
+      null,
+    ),
   );
 
 export const getLastVolumesFromURLs = async (urls: string[]) =>
   Promise.all(
-    urls.map((url) => getPage(url).then(getVolumesFromPage).then(getLastVolume))
+    urls.map((url) =>
+      getPage(url).then(getVolumesFromPage).then(getLastVolume),
+    ),
   );

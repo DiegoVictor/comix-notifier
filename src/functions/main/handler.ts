@@ -10,14 +10,14 @@ export const main = async () => {
     const [{ value: urls }, { id, value: catalog }] = await getConfigs();
 
     const volumes = await getLastVolumesFromURLs(urls).then((lastVolumes) =>
-      getOnlyNewVolumes(lastVolumes, catalog)
+      getOnlyNewVolumes(lastVolumes, catalog),
     );
 
     if (volumes.length > 0) {
       const updatedCatalog = updateCatalog(catalog, volumes);
 
       await sendVolumesNotifications(volumes).then(() =>
-        updateConfigById(id, updatedCatalog)
+        updateConfigById(id, updatedCatalog),
       );
     }
 

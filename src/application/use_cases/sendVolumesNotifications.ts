@@ -6,7 +6,7 @@ export const sendVolumesNotifications = (volumes: IVolume[]) =>
     volumes.map(({ title, number }) =>
       notificationService.send(
         `${title} #${number}`,
-        `Novo volume disponível na Comix Book Shop`
-      )
-    )
+        `Novo volume disponível na Comix Book Shop`,
+      ),
+    ),
   );
