@@ -9,8 +9,8 @@ describe('Product.create', () => {
     expect(
       create({
         slug,
-        product: `<div class="product-name"><a href="${slug}" title="${title}">${title}, Volume ${number}</a>`,
-      })
+        product: `<strong class="product name product-item-name"><a class="product-item-link" href="${slug}">${title}, Volume ${number}</a></strong>`,
+      }),
     ).toStrictEqual({
       title,
       number,
