@@ -1,7 +1,7 @@
 import { IProduct } from '@application/contracts/IProduct';
 
 export const PRODUCT_NAME_REGEX =
-  /<\w+\sclass="product-name"><a\shref=".+"\stitle=".+">(.+)<\/a>/gi;
+  /<strong\sclass="product name product-item-name"><a\sclass="product-item-link"\shref=".+">(.+)<\/a><\/strong>/gi;
 
 export const create = ({ slug, product }: Record<string, any>): IProduct => {
   const [title, ...parts] = product
