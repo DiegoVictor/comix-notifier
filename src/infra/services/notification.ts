@@ -1,6 +1,9 @@
 import { SNS } from '@aws-sdk/client-sns';
 
-const sns = new SNS({ region: process.env.REGION });
+const sns = new SNS({
+  region: process.env.REGION,
+  endpoint: process.env.ENDPOINT_URL ?? undefined,
+});
 
 export const send = async (title: string, body: string) => {
   await sns.publish({

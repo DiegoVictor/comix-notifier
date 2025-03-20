@@ -4,7 +4,10 @@ import { marshall, unmarshall } from '@aws-sdk/util-dynamodb';
 import * as Config from '@entities/Config';
 import { IConfig } from '@application/contracts/IConfig';
 
-const dynamodb = new DynamoDB({ region: process.env.REGION });
+const dynamodb = new DynamoDB({
+  region: process.env.REGION,
+  endpoint: process.env.ENDPOINT_URL ?? undefined,
+});
 
 const getFirstItem = (result: ScanCommandOutput) =>
   unmarshall(result.Items.shift());
@@ -36,7 +39,9 @@ export const createOne = async <T>(config: IConfig<T>) =>
   dynamodb
     .putItem({
       TableName: process.env.CONFIG_TABLE,
-      Item: marshall(config),
+      Item: marshall(config, {
+        removeUndefinedValues: true,
+      }),
     })
     .then(() => config);
 
