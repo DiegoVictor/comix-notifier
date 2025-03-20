@@ -13,4 +13,10 @@ const comix = axios.create({
 });
 
 export const getPage = async (url: string) =>
-  comix.get(url).then(({ data }): Page => ({ url, data }));
+  comix
+    .get(url, {
+      params: {
+        product_list_order: 'position',
+      },
+    })
+    .then(({ data }): Page => ({ url, data }));
